@@ -15,7 +15,6 @@ public partial class BankAccount
     {
         return _balance;
     }
-   
     
     
 }

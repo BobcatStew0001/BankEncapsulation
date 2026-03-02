@@ -8,14 +8,16 @@ namespace BankEncapsulation
         {
             var zach = new BankAccount();
 
-            var currentBalance = zach.GetBalance();
-            Console.WriteLine(currentBalance);
+            Console.WriteLine($"Your balance is {zach.GetBalance():C}");
 
-            zach.Deposit(5000.25); 
-            Console.WriteLine(zach.GetBalance());
-
-            zach.Deposit(-2000.00); //I added this to make sure it was keeping a running tally of the balance
-            Console.WriteLine(zach.GetBalance());
+            
+            Console.WriteLine("What is the amount you would like to deposit?");
+            
+            var amountToDeposit = double.Parse(Console.ReadLine());
+            
+            zach.Deposit(amountToDeposit);
+            
+            Console.WriteLine($"Your current balance is: {zach.GetBalance():C}");
         }
     }
 }
